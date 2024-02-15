@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #EEEFEF;
+}
+
+header {
+  margin-bottom: 2em;
+}
+
+main .main-publication {
+  display: flex;
+  justify-content: center;
+
+}
+
+#image-thumbnails {
+  width: 10em;
+  min-width: 10em;
+  max-width: 10em;
+}
+
+.columna > img {
+  max-width: 10em;
+  border-radius: 3px;
+  margin-bottom: 0.7em;
+  transition: all 0.5s ease;
+}
+
+.publicacion {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+
+
+.imagen-ampliada {
+  max-width: 30em;
+  margin: 0em 2em;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+
+}
+
+.imagen-ampliada>img {
+  max-width: 100%;
+  border: 1px solid #6b6b6b;
+  border-radius: 3px;
+
+}
+
+.columna img:hover {
+
+  transform: scale(1.1);
+  filter: opacity(90%);
+}
+
+.price-txt {
+  display: flex;
+}
+
+#contenedor>.price-txt>.precio {
+  font-size: 200%;
+  font-weight: 600;
+}
+
+#contenedor>.price-txt>.descuento {
+  font-size: 200%;
+  font-weight: 600;
+  background-color: #f39915;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  margin-left: 1em;
+  padding: 1px;
+  max-height: 30px;
+}
+
+#contenedor>#cartBtn {
+  width: 10em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #212F3C;
+  color: #ECF0F1;
+  border-radius: 4px;
+  padding: 3px;
+  font-style: oblique;
+
+
+}
+
+#contenedor>#cartBtn:hover {
+  transform: scale(1.05);
+}
+
+#comentarios {
+  margin-left: 1.875em;
+  margin-right: 1.875em;
+}
+
+/* estilo productos relacionados */
+
+#product-cards-container {
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: auto;
+  margin: 10px;
+}
+
+
+#related-products {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+
+
+.contendor-gral-prelacionados {
+  margin-left: 30px;
+}
+
+.card-title {
+
+  margin-top: 10px;
+}
+
+/* fin estilo productos relacionados */
+
+#product-cards-container:hover {
+  scale: calc(1.05);
+
+}
+
+#product-cards-container {
+  border-radius: 3px;
+}
+
+#btn-right:hover {
+  scale: calc(1.1);
+  background-color: #ECF0F1;
+}
+
+#btn-left:hover {
+  scale: calc(1.1);
+  background-color: #ECF0F1;
+}
+
+.btn-left,
+.btn-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.btn-left {
+  left: 10px;
+}
+
+.btn-right {
+  right: 10px;
+}
+
+/* MEDIA QUERIES 1150PX */
+@media (max-width: 1150px) {
+  .publicacion {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .imagen-ampliada {
+    width: 100%;
+    margin: 0;
+  }
+
+  .columna {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .columna>img {
+    min-width: 2em;
+  }
+
+  #image-thumbnails {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    gap: 0.4em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  #contenedor {
+    width: 100%;
+  }
+
+  #contenedor > .price-txt > .descuento {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  #contenedor>#cartBtn {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(5%)
+  }
+
+  main #comentarios {
+    margin: 0;
+  }
+
+  main #comentarios #comments-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  main .contendor-gral-prelacionados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  main .contendor-gral-prelacionados h2 {
+    margin-left: 0;
+  }
+
+  #related-products {
+    display: flex;
+    flex-direction: column;
+  }
+}
+

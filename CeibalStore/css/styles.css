@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+/* Estilos para pantallas grandes (mayores a 768px) */
+#ilustracion {
+  display: block; 
+}
+
+/* Media query para pantallas más pequeñas (768px o menos) */
+@media screen and (max-width: 768px) {
+  #ilustracion {
+    display: none; 
+  }
+}
+
+/* Estilos para pantallas grandes (mayores a 768px) */
+#ilustracionPantallasChicas {
+  display: none; 
+}
+
+/* Media query para pantallas más pequeñas (768px o menos) */
+@media screen and (max-width: 768px) {
+  #ilustracionPantallasChicas {
+    display: block; 
+  }
+}
+
+.site-header a {
+  color: white;
+  transition: ease-in-out color .15s;
+}
+
+.site-header .dropdown-menu a {
+  color: black;
+}
+
+.dropzone {
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: white;
+}
+
+.img-fit {
+  max-height: 100%;
+}
+
+.alert {
+  position: fixed;
+  top: 80px;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+}
+
+.cursor-active {
+  cursor: pointer;
+}
+
+.left {
+  float: left;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: none;
+}
+
+main {
+  min-height: calc(100vh - 210px);
+}
+
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.checked {
+  color: orange;
+}
+
+.buttonpre {
+  background-color: rgb(222, 222, 222);
+}
+
+footer {
+  background-color: #f39915;
+  width: 100%;
+  height: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.text-muted a {
+  text-decoration: none;
+  color: #000000;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  padding: 5px 7px;
+}
+
+footer .container {
+  text-align: center;
+}
+
+
+.container p {
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  display: block;
+  margin-block-end: 0em;
+}
+
+p {
+  font-size: 90%;
+  font-weight: 1;
+}
+
+
+#label_toggle {
+  margin-left: 30px;
+  font-size: 1.5em;
+  cursor: pointer;
+
+
+}
+
+
+#toggle {
+  display: none;
+
+}
+
+#label_toggle2 {
+  margin-left: 10px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: yellow;
+
+}
+
+#toggle2 {
+  display: none;
+
+}
+
+
+.no-products-image {
+  max-width: 1000px;
+  margin-left: -290px;
+}
+
+
+.noProductos {
+  font-size: 20px;
+}
+
+
+.table-container {
+  margin-bottom: 0;
+}
+
+.table-responsive table {
+  margin-bottom: 0;
+}
+
+.btn-sm {
+  width: 100px;
+}
+
+.custom-delete-btn {
+  cursor: pointer;
+  color: inherit;
+  padding: 3px 6px;
+}
+
+.custom-delete-btn:hover {
+  color: red;
+  scale: calc(1.15);
+}
+
+.form-select {
+  height: 35px;
+  width: 20vw;
+  margin-left: 15px;
+}
+
+.botones {
+  background-color: orange;
+  border-color: orange;
+}
+
+.cart-link {
+  margin: 30px;
+  color: white;
+}
+
+#divDatos {
+  display: flexbox;
+  justify-content: center;
+  width: 70%;
+  margin-left: 10rem;
+  margin-top: 20px;
+}
+
+.col {
+  margin: 1rem;
+}
+
+h2 {
+  margin: 1rem;
+}
+
+#btnPerfil {
+  display: block;
+  width: 15%;
+  padding: 6px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+
+  margin: 1rem;
+}
+
+.profileImage {
+  margin-top: 15px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.miniProfileImage {
+  width: 30px;
+  /* Tamaño deseado para la miniatura */
+  height: 30px;
+  object-fit: cover;
+  /* O 'contain' según tus preferencias */
+  border-radius: 50%;
+  /* Para hacer una miniatura redonda */
+}
+
+.profileImageContainer {
+  position: relative;
+  display: inline-block;
+}
+
+
+.imageButtons {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  align-items: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+.profileImageContainer:hover .imageButtons {
+  opacity: 1;
+}

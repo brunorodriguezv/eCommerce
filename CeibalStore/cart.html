@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/footerCarrito.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- overlay-->
+  <div class="page-overlay" style="display: none;"></div>
+
+  <!-- START OF NAV SECTION -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false" style="display: flex; gap: 0.3em; padding-left: 0px; ">
+              <span id="nombreNav"></span>
+              <span id="miniImagenPerfil"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a id="logout" class="dropdown-item" href="#">Cerrar sesión</a></li>
+            
+                <input type="checkbox" id="toggle">
+                <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
+              
+                <input type="checkbox" id="toggle2">
+                <label for="toggle2" id="label_toggle2"><i class="fa-solid fa-sun"></i></label>
+              </li>
+              <li>
+                <div class="contenedor"></div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- END OF NAV SECTION -->
+
+  <!-- START OF MAIN SECTION -->
+  <main class="vh-100">
+
+    <div class="text-center p-4">
+      <h2>Carrito de compras</h2>
+      <p class="lead"></p>
+    </div>
+    <div class="row p-4">
+      <!-- cart table-->
+      <div class="col-8">
+        <h5 class="mx-auto ">Artículos a comprar:</h5>
+        <div class=" border">
+          <div id="carritoContainer" class="table-responsive "></div>
+          <div id="aviso" class="alert-danger"></div>
+        </div>
+      </div>
+
+      <!-- cart resumé-->
+      <div class="col-4">
+        <h5>Resumen de compra:</h5>
+        <div class=" border p-3">
+          <div id="total">
+            <div class="col-12 d-flex  align-content-center h-100  d-flex justify-content-between">
+              <label for="tipoEnvio" class="form-label d-flex align-items-center m-0 ">Tipo de Envío</label>
+              <select class="form-select" id="tipoEnvio" required>
+                <option value="" disabled selected>Selecciona un tipo de envío</option>
+                <option value="premium">Premium 2 a 5 días(15%)</option>
+                <option value="express">Express 5 a 8 días(7%)</option>
+                <option value="estandar">Standard 12 a 15 días(5%)</option>
+              </select>
+            </div>
+            <br>
+            <div class="mb-2"><strong>Costos</strong></div>
+            <div class="mb-2">
+              <div class="mb-2 d-flex justify-content-between">
+                <div> Subtotal:</div>
+                <div><span>USD </span><span id="subtotalCosto">0.00</span></div>
+              </div>
+              <div class="mb-2  d-flex justify-content-between">
+                <div>Costo de envío: </div>
+                <div><span>USD </span><span id="envioCosto">0.00</span></div>
+              </div>
+              <div class="mb-2  d-flex justify-content-between">
+                <div>Total:</div>
+                <div> <span>USD </span><span id="totalCosto">0.00</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="d-flex w-100 justify-content-end">
+          <button id="irAformadepago" type="button" onclick="finalizarCompra()"
+            class="btn btn-primary w-50 botones">Finalizar compra</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- END OF MAIN SECTION -->
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+    </div>
+  </div>
+
+  <!-- START OF FOOTER SECTION -->
+  <footer class="text-muted">
+    <div class="container">
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+  <!-- END OF FOOTER SECTION -->
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/logout.js"></script>
+</body>
+
+</html>

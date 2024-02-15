@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+<!-- START OF NAV SECTION -->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav w-100 justify-content-between">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="btn btn-dark" data-bs-toggle="dropdown" aria-expanded="false" style="display: flex; gap: 0.3em; padding-left: 0px; ">
+            <span id="nombreNav"></span>
+            <span id="miniImagenPerfil"></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+            <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a id="logout" class="dropdown-item" href="#">Cerrar sesión</a></li>
+          
+              <input type="checkbox" id="toggle">
+              <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
+            
+              <input type="checkbox" id="toggle2">
+              <label for="toggle2" id="label_toggle2"><i class="fa-solid fa-sun"></i></label>
+            </li>
+            <li>
+              <div class="contenedor"></div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- END OF NAV SECTION -->
+
+
+  <!-- START OF MAIN SECTION -->
+
+  <main class="pb-5">
+
+    <div class="text-center p-4">
+      <h2>Productos</h2>
+      <p class="lead" id="nombreCat"></p>
+    </div>
+
+    <!-- filters -->
+    <div id="filters-container">
+      <div class="input-group rounded m-auto pt-4 w-50 " id="filters-search">
+        <input type="search" id="buscar" class="form-control" onkeyup="buscarProductos()"
+          placeholder="¿Qué estas buscando?" aria-label="Search" aria-describedby="search-addon" />
+
+        <span class="input-group-text" id="search-icon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+
+      <div id="filers-btn"
+        class="m-auto w-75 mt-4 d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <!-- Los primeros tres labels alineados a la izquierda -->
+        <div class="d-flex flex-row align-items-center ">
+          <label id="ascendente" class="btn btn-light active mx-1 col-12 col-md-1 border mt-1" data-toggle="tooltip"
+            data-placement="top" title="Ordenar por menor precio">
+            <i class="bi-arrow-up" style="font-size: 18px;">$</i>
+          </label>
+
+          <label id="descendente" class="btn btn-light mx-1 col-12 col-md-1 border mt-1" data-toggle="tooltip"
+            data-placement="top" title="Ordenar por mayor precio">
+            <i class="bi-arrow-down" style="font-size: 18px;">$</i>
+          </label>
+
+          <label id="relevancia" class="btn btn-light mx-1 col-12 col-md-1 border mt-1" data-toggle="tooltip"
+            data-placement="top" title="Ordenar por relevancia">
+            <i class="bi bi-sort-down" style="font-size: 25px;"></i>
+          </label>
+        </div>
+
+        <!-- Los siguientes elementos alineados a la derecha -->
+        <div class="d-flex flex-column flex-md-row align-items-center justify-content-md-end">
+          <label for="precio" class="btn btn-light mx-1 col-12 col-md-1 custom-label mt-1 ">Precio:</label>
+          <input type="number" placeholder="$ Mínimo" class="m-auto btn btn-light mx-1 col-12 col-md-2 custom-input"
+            id="precioMinimo">
+          <input type="number" placeholder="$ Máximo" class="m-auto btn btn-light mx-1 col-12 col-md-2 custom-input"
+            id="precioMaximo">
+          <label id="rangoPrecio"
+            class="btn btn-light mx-1 col-12 col-md-1 mt-1 d-flex align-items-center justify-content-center">Filtrar</label>
+          <label id="limpiarFiltros"
+            class="btn btn-light mx-1 col-12 col-md-1 mt-1 d-flex align-items-center justify-content-center">Limpiar</label>
+        </div>
+      </div>
+
+
+      <!-- products list-->
+      <div class="container container-products card" id="container-cards">
+        <div class="row row-cols-1 row-cols-md-4 g-3 col-16" id="container-content">
+        </div>
+      </div>
+  </main>
+
+  <!-- START OF FOOTER SECTION -->
+  <footer class="text-muted">
+    <div class="container">
+      <p> Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+    </div>
+  </footer>
+  <!-- END OF FOOTER SECTION -->
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/logout.js"></script>
+  <script src="js/product-info.js"></script>
+</body>
+
+</html>
